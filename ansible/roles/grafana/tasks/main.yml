@@ -31,6 +31,5 @@
     group: grafana
     mode: '0644'
   loop:
-    - "{{ playbook_dir }}/../monitoring/grafana/dashboards/node-overview.json"
-    - "{{ playbook_dir }}/../monitoring/grafana/dashboards/services-health.json"
+    - "{{ playbook_dir }}/../monitoring/grafana/dashboards/homelab-main.json"
   notify: Restart grafana
