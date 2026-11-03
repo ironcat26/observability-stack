@@ -1,4 +1,4 @@
-# Observability stack
+# Observability stack (homelab-nonitoring)
 
 Observability stack on Proxmox homelab.
 
