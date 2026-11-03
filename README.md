@@ -1,4 +1,4 @@
-# homelab-monitoring
+# Observability stack
 
 Observability stack on Proxmox homelab.
 
