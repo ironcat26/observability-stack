@@ -4,6 +4,7 @@
   become: true
   roles:
     - node_exporter
+    - blackbox_exporter
 
 - name: Monitoring stack on monitor
   hosts: monitor

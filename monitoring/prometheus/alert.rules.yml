@@ -44,3 +44,12 @@ groups:
         annotations:
           summary: "Disk will fill in 4 hours on {{ $labels.instance }}"
           description: "Based on the current write rate, the disk will be full in 4 hours."
+
+      - alert: ServiceDown
+        expr: probe_success == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Сервис {{ $labels.instance }} недоступен"
+          description: "Проверка {{ $labels.job }} не проходит уже 2 минуты."
