@@ -1,0 +1,12 @@
+groups:
+  - name: syslog_errors
+    rules:
+      - alert: HighErrorRateInSyslog
+        expr: |
+          sum(count_over_time({job="syslog"} |= "error" [1m])) > 5
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Много ошибок в syslog"
+          description: "В логах syslog за последнюю минуту больше 5 строк со словом error."

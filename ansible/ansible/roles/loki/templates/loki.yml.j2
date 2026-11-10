@@ -1,0 +1,11 @@
+ruler:
+  storage:
+    type: local
+    local:
+      directory: /var/lib/loki/rules
+  rule_path: /var/lib/loki/rules-temp
+  alertmanager_url: http://10.10.10.20:9093
+  ring:
+    kvstore:
+      store: inmemory
+  enable_api: true

@@ -1,0 +1,21 @@
+- name: Copy loki rules
+  ansible.builtin.copy:
+    src: loki-rules.yml
+    dest: /var/lib/loki/rules/fake/rules.yml
+    owner: loki
+    group: loki
+    mode: '0644'
+  notify: restart loki
+
+  - name: Create loki directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: loki
+    group: loki
+    mode: '0755'
+  loop:
+    - /var/lib/loki
+    - /var/lib/loki/chunks
+    - /var/lib/loki/rules
+    - /etc/loki
